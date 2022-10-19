@@ -768,6 +768,7 @@ function createControls() {
     isRun = false;
     const statistics = document.querySelector('.statistics-container');
     statistics.remove();
+    moves = 0;
     createTimerAndMoveCounter();
     createBoard();
   });
