@@ -25,7 +25,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n  margin-bottom: 40px;\n  display: flex;\n  justify-content: space-evenly;\n  font-size: 30px;\n}\n\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  width: 25%;\n  height: 25%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,6BAAA;EACA,eAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAHJ;;AAMA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBAhCS;AA6Bb;;AAMA;EACI,sBAAA;EACA,uBAAA;EACA,yBAvCG;EAwCH,iBAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AAHJ","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n    margin-bottom: 40px;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    font-size: 30px;\r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    width: 25%;\r\n    height: 25%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  display: flex;\n  justify-content: space-evenly;\n  font-size: 30px;\n}\n\n.statistics-container {\n  width: 40%;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  text-align: center;\n  font-size: 30px;\n  display: flex;\n  justify-content: space-between;\n}\n\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  width: 25%;\n  height: 25%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,6BAAA;EACA,eAAA;AAHJ;;AAMA;EACI,UAAA;EACA,cAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,8BAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAHJ;;AAMA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBA1CS;AAuCb;;AAMA;EACI,sBAAA;EACA,uBAAA;EACA,yBAjDG;EAkDH,iBAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AAHJ","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    font-size: 30px;\r\n}\r\n\r\n.statistics-container {\r\n    width: 40%;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    width: 25%;\r\n    height: 25%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -663,6 +663,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let NUMBERS = createNumbers();
 const tiles = [];
+let timerId;
+let moves = 0;
 function createHeading() {
   const heading = document.createElement('h1');
   heading.innerText = 'Gem Puzzle';
@@ -682,10 +684,45 @@ function createControls() {
     NUMBERS = [...refreshedNumbers];
     const frame = document.querySelector('.frame');
     frame.remove();
+    clearTimeout(timerId);
+    /* const timer = document.querySelector('.timer-container');
+    timer.remove(); */
+    const statistics = document.querySelector('.statistics-container');
+    statistics.remove();
+    createTimerAndMoveCounter();
     createBoard();
   });
 }
 window.addEventListener('load', createControls);
+function createTimer(container) {
+  const timer = document.createElement('div');
+  container.append(timer);
+  let minutes = 0;
+  let seconds = 0;
+  timer.innerHTML = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
+  timerId = setInterval(() => {
+    seconds++;
+    if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+    }
+    timer.innerHTML = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
+  }, 1000);
+}
+function createMoveCounter(container) {
+  const moveCount = document.createElement('div');
+  moveCount.className = 'move-counter';
+  container.append(moveCount);
+  moveCount.innerHTML = 'Moves: 0';
+}
+function createTimerAndMoveCounter() {
+  const container = document.createElement('div');
+  container.className = 'statistics-container';
+  document.body.append(container);
+  createTimer(container);
+  createMoveCounter(container);
+}
+window.addEventListener('load', createTimerAndMoveCounter);
 function createNumbers() {
   const numbers = new Array();
   for (let i = 0; i < 16; i++) {
@@ -765,11 +802,20 @@ function addMove() {
       tiles[emptyIndex] = tiles[tileIndex];
       tiles[tileIndex] = empty;
 
+      //увеличиваем счетчик ходов;
+      moves++;
+      const moveCounter = document.querySelector('.move-counter');
+      moveCounter.innerHTML = `Moves: ${moves}`;
+
       //проверяем все ли ячейки на своих местах;
       const tempArr = tiles.slice(0, -1);
       for (let i = 0; i < tempArr.length; i++) {
         if (tempArr[i].value != i + 1) return;else if (i === tempArr.length - 1 && tiles[tiles.length - 1].value == '') {
           console.log('You Won!');
+          clearTimeout(timerId);
+          //const currentTime;
+          //const currentMoves;
+          //save to local storage
         }
       }
     });
