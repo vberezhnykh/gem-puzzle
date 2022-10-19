@@ -25,7 +25,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n  margin: 1vh auto;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 22px;\n}\n\n.statistics-container {\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  text-align: center;\n  font-size: 30px;\n  display: flex;\n  justify-content: space-between;\n}\n\n@media (max-width: 768px) {\n  .controls-container,\n.statistics-container {\n    max-width: 95vw;\n  }\n}\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n@media (max-width: 768px) {\n  .frame {\n    max-width: 640px;\n    max-height: 640px;\n  }\n}\n@media (max-width: 640px) {\n  .frame {\n    max-width: 320px;\n    max-height: 320px;\n  }\n}\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}\n\n.tile--three {\n  width: 33.3333333333%;\n  height: 33.3333333333%;\n}\n\n.tile--four {\n  width: 25%;\n  height: 25%;\n}\n\n.tile--five {\n  width: 20%;\n  height: 20%;\n}\n\n.tile--six {\n  width: 16.6666666667%;\n  height: 16.6666666667%;\n}\n\n.tile--seven {\n  width: 14.2857142857%;\n  height: 14.2857142857%;\n}\n\n.tile--eight {\n  width: 12.5%;\n  height: 12.5%;\n}\n\n@media (max-width: 640px) {\n  .tile--six,\n.tile--seven {\n    font-size: 40px;\n  }\n  .tile--eight {\n    font-size: 30px;\n  }\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,eAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,8BAAA;EACA,eAAA;AAHJ;;AAMA;EACI,eAAA;EACA,cAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,8BAAA;AAHJ;;AAMA;EACI;;IAEI,eAAA;EAHN;AACF;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAJJ;;AAOA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBAlDS;AA8Cb;;AAOA;EACI;IACI,gBAAA;IACA,iBAAA;EAJN;AACF;AAMA;EACI;IACI,gBAAA;IACA,iBAAA;EAJN;AACF;AAOA;EACI,sBAAA;EACA,uBAAA;EACA,yBAtEG;EAuEH,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,UAAA;EACA,WAAA;AALJ;;AAQA;EACI,UAAA;EACA,WAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,YAAA;EACA,aAAA;AALJ;;AAQA;EACI;;IAEI,eAAA;EALN;EAOE;IACI,eAAA;EALN;AACF","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n    margin: 1vh auto;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-size: 22px;\r\n}\r\n\r\n.statistics-container {\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .controls-container,\r\n    .statistics-container {\r\n        max-width: 95vw;\r\n    } \r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .frame {\r\n        max-width: 640px;\r\n        max-height: 640px;\r\n    }\r\n}\r\n@media (max-width: 640px) {\r\n    .frame {\r\n        max-width: 320px;\r\n        max-height: 320px;\r\n    }\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.tile--three {\r\n    width: calc(100% / 3);\r\n    height: calc(100% / 3)\r\n}\r\n\r\n.tile--four {\r\n    width: calc(100% / 4);\r\n    height: calc(100% / 4);\r\n}\r\n\r\n.tile--five {\r\n    width: calc(100% / 5);\r\n    height: calc(100% / 5);\r\n}\r\n\r\n.tile--six {\r\n    width: calc(100% / 6);\r\n    height: calc(100% / 6);\r\n}\r\n\r\n.tile--seven {\r\n    width: calc(100% / 7);\r\n    height: calc(100% / 7);\r\n}\r\n\r\n.tile--eight {\r\n    width: calc(100% / 8);\r\n    height: calc(100% / 8);\r\n}\r\n\r\n@media(max-width: 640px) {\r\n    .tile--six,\r\n    .tile--seven {\r\n        font-size: 40px;\r\n    }\r\n    .tile--eight {\r\n        font-size: 30px;\r\n    }\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n  margin: 1vh auto;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 22px;\n}\n\n.audio-button {\n  width: 52px;\n  height: 52px;\n  padding: 0;\n  background-repeat: no-repeat;\n}\n\n.statistics-container {\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  text-align: center;\n  font-size: 30px;\n  display: flex;\n  justify-content: space-between;\n}\n\n@media (max-width: 768px) {\n  .controls-container,\n.statistics-container {\n    max-width: 95vw;\n  }\n}\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n@media (max-width: 768px) {\n  .frame {\n    max-width: 640px;\n    max-height: 640px;\n  }\n}\n@media (max-width: 640px) {\n  .frame {\n    max-width: 320px;\n    max-height: 320px;\n  }\n}\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}\n\n.tile--three {\n  width: 33.3333333333%;\n  height: 33.3333333333%;\n}\n\n.tile--four {\n  width: 25%;\n  height: 25%;\n}\n\n.tile--five {\n  width: 20%;\n  height: 20%;\n}\n\n.tile--six {\n  width: 16.6666666667%;\n  height: 16.6666666667%;\n}\n\n.tile--seven {\n  width: 14.2857142857%;\n  height: 14.2857142857%;\n}\n\n.tile--eight {\n  width: 12.5%;\n  height: 12.5%;\n}\n\n@media (max-width: 640px) {\n  .tile--six,\n.tile--seven {\n    font-size: 40px;\n  }\n  .tile--eight {\n    font-size: 30px;\n  }\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,eAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,8BAAA;EACA,eAAA;AAHJ;;AAMA;EACI,WAAA;EACA,YAAA;EACA,UAAA;EACA,4BAAA;AAHJ;;AAMA;EACI,eAAA;EACA,cAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,8BAAA;AAHJ;;AAMA;EACI;;IAEI,eAAA;EAHN;AACF;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAJJ;;AAOA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBAzDS;AAqDb;;AAOA;EACI;IACI,gBAAA;IACA,iBAAA;EAJN;AACF;AAMA;EACI;IACI,gBAAA;IACA,iBAAA;EAJN;AACF;AAOA;EACI,sBAAA;EACA,uBAAA;EACA,yBA7EG;EA8EH,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,UAAA;EACA,WAAA;AALJ;;AAQA;EACI,UAAA;EACA,WAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,YAAA;EACA,aAAA;AALJ;;AAQA;EACI;;IAEI,eAAA;EALN;EAOE;IACI,eAAA;EALN;AACF","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n    margin: 1vh auto;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-size: 22px;\r\n}\r\n\r\n.audio-button {\r\n    width: 52px;\r\n    height: 52px;\r\n    padding: 0;\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.statistics-container {\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .controls-container,\r\n    .statistics-container {\r\n        max-width: 95vw;\r\n    } \r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .frame {\r\n        max-width: 640px;\r\n        max-height: 640px;\r\n    }\r\n}\r\n@media (max-width: 640px) {\r\n    .frame {\r\n        max-width: 320px;\r\n        max-height: 320px;\r\n    }\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.tile--three {\r\n    width: calc(100% / 3);\r\n    height: calc(100% / 3)\r\n}\r\n\r\n.tile--four {\r\n    width: calc(100% / 4);\r\n    height: calc(100% / 4);\r\n}\r\n\r\n.tile--five {\r\n    width: calc(100% / 5);\r\n    height: calc(100% / 5);\r\n}\r\n\r\n.tile--six {\r\n    width: calc(100% / 6);\r\n    height: calc(100% / 6);\r\n}\r\n\r\n.tile--seven {\r\n    width: calc(100% / 7);\r\n    height: calc(100% / 7);\r\n}\r\n\r\n.tile--eight {\r\n    width: calc(100% / 8);\r\n    height: calc(100% / 8);\r\n}\r\n\r\n@media(max-width: 640px) {\r\n    .tile--six,\r\n    .tile--seven {\r\n        font-size: 40px;\r\n    }\r\n    .tile--eight {\r\n        font-size: 30px;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -197,6 +197,20 @@ module.exports = function (item) {
 
   return [content].join("\n");
 };
+
+/***/ }),
+
+/***/ "./src/assets/whoosh.mp3":
+/*!*******************************!*\
+  !*** ./src/assets/whoosh.mp3 ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "ed67a52ff8e007b3e167949971404740.mp3");
 
 /***/ }),
 
@@ -575,6 +589,26 @@ function styleTagTransform(css, styleElement) {
 
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/assets/volume-off.svg":
+/*!***********************************!*\
+  !*** ./src/assets/volume-off.svg ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/volume-off.svg";
+
+/***/ }),
+
+/***/ "./src/assets/volume-on.svg":
+/*!**********************************!*\
+  !*** ./src/assets/volume-on.svg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/volume-on.svg";
+
 /***/ })
 
 /******/ 	});
@@ -628,6 +662,18 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -642,6 +688,26 @@ module.exports = styleTagTransform;
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
@@ -659,6 +725,12 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ "./src/index.html");
 /* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/styles.scss */ "./src/styles/styles.scss");
+/* harmony import */ var _assets_whoosh_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/whoosh.mp3 */ "./src/assets/whoosh.mp3");
+/* harmony import */ var _assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/volume-on.svg */ "./src/assets/volume-on.svg");
+/* harmony import */ var _assets_volume_off_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/volume-off.svg */ "./src/assets/volume-off.svg");
+
+
+
 
 
 let size = 4;
@@ -667,6 +739,7 @@ const tiles = [];
 let timerId;
 let moves = 0;
 let width;
+let isPlaying = true;
 function createHeading() {
   const heading = document.createElement('h1');
   heading.innerText = 'Gem Puzzle';
@@ -674,9 +747,12 @@ function createHeading() {
 }
 window.addEventListener('load', createHeading);
 function createControls() {
+  //создаем контейнер с элементами управления;
   const container = document.createElement('div');
   container.className = 'controls-container';
   document.body.append(container);
+
+  //создаем кнопку перемешивания;
   const refreshBtn = document.createElement('button');
   refreshBtn.className = 'refresh-btn';
   refreshBtn.innerText = 'Shuffle and Start';
@@ -693,6 +769,23 @@ function createControls() {
     createTimerAndMoveCounter();
     createBoard();
   });
+
+  //создаем кнопку выключения звука;
+  const audioBtn = document.createElement('button');
+  audioBtn.className = 'audio-button';
+  audioBtn.style.backgroundImage = `url(${_assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__})`;
+  audioBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      audioBtn.style.backgroundImage = `url(${_assets_volume_off_svg__WEBPACK_IMPORTED_MODULE_4__})`;
+      isPlaying = false;
+    } else {
+      audioBtn.style.backgroundImage = `url(${_assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__})`;
+      isPlaying = true;
+    }
+  });
+  refreshBtn.after(audioBtn);
+
+  //создаем меню выбора размера поля
   const selectSize = document.createElement('select');
   selectSize.name = 'Choose size';
   const options = [3, 4, 5, 6, 7, 8];
@@ -716,7 +809,7 @@ function createControls() {
     createTimerAndMoveCounter();
     createBoard();
   });
-  refreshBtn.after(selectSize);
+  audioBtn.after(selectSize);
 }
 window.addEventListener('load', createControls);
 
@@ -848,19 +941,49 @@ function addMove() {
       const moveCounter = document.querySelector('.move-counter');
       moveCounter.innerHTML = `Moves: ${moves}`;
 
+      //добавляем звук свайпа
+      const sound = new Audio(_assets_whoosh_mp3__WEBPACK_IMPORTED_MODULE_2__["default"]);
+      if (isPlaying) sound.play();
+
       //проверяем все ли ячейки на своих местах;
       const tempArr = tiles.slice(0, -1);
       for (let i = 0; i < tempArr.length; i++) {
         if (tempArr[i].value != i + 1) return;else if (i === tempArr.length - 1 && tiles[tiles.length - 1].value == '') {
           clearTimeout(timerId);
           const time = document.querySelector('.timer').innerHTML;
-          console.log(`Hooray! You solved the puzzle in ${time} and ${moves} moves!`);
+          alert(`Hooray! You solved the puzzle in ${time} and ${moves} moves!`);
           //save to local storage
         }
       }
     });
   });
 }
+
+/* console.log(`1. Basic scope:
+- layout, design, responsive UI + 5;
+- at the beginning state of the game, the frame is filled with randomly generated and shuffled numbers: +10;
+- on click on a tile next to an empty cell, the tile moves to the empty cell: +10;
+______
++ 25;
+
+2. Advanced scope:
+- the game can be restarted without reloading the page: +10;
+- game duration and number of moves are displayed: +10;
+- sound accompaniment (on/off) of tiles movement: +10;
+- implemented saving the state of the game and saving the top 10 results using LocalStorage: +0 (10);
+- implemented selection of different sizes for frame: +10;
+______
++ 40;
+
+Hacker scope: 
+-  when the game is finished, the following message is displayed "Hooray! You solved the puzzle in ##:## and N moves!". So that shuffled algorithm should work correctly - user can solve puzzle +10;
+- animation of tiles' movement on frame: +15;
+- tiles can be dragged with use of mouse: + 0 (15);
+______
++ 25;
+
+Total: 90;
+`) */
 })();
 
 /******/ })()
