@@ -25,7 +25,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  display: flex;\n  justify-content: space-evenly;\n  font-size: 30px;\n}\n\n.statistics-container {\n  width: 40%;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  text-align: center;\n  font-size: 30px;\n  display: flex;\n  justify-content: space-between;\n}\n\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}\n\n.tile--three {\n  /* width: 33.4%;\n  height: 33.4%; */\n  width: 33.3333333333%;\n  height: 33.3333333333%;\n}\n\n.tile--four {\n  width: 25%;\n  height: 25%;\n}\n\n.tile--five {\n  width: 20%;\n  height: 20%;\n}\n\n.tile--six {\n  width: 16.6666666667%;\n  height: 16.6666666667%;\n}\n\n.tile--seven {\n  width: 14.2857142857%;\n  height: 14.2857142857%;\n}\n\n.tile--eight {\n  width: 12.5%;\n  height: 12.5%;\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,6BAAA;EACA,eAAA;AAHJ;;AAMA;EACI,UAAA;EACA,cAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,8BAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAHJ;;AAMA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBA1CS;AAuCb;;AAMA;EACI,sBAAA;EACA,uBAAA;EACA,yBAjDG;EAkDH,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AAHJ;;AAMA;EACI;kBAAA;EAEA,qBAAA;EACA,sBAAA;AAHJ;;AAMA;EACI,UAAA;EACA,WAAA;AAHJ;;AAMA;EACI,UAAA;EACA,WAAA;AAHJ;;AAMA;EACI,qBAAA;EACA,sBAAA;AAHJ;;AAMA;EACI,qBAAA;EACA,sBAAA;AAHJ;;AAMA;EACI,YAAA;EACA,aAAA;AAHJ","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    font-size: 30px;\r\n}\r\n\r\n.statistics-container {\r\n    width: 40%;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.tile--three {\r\n    /* width: 33.4%;\r\n    height: 33.4%; */\r\n    width: calc(100% / 3);\r\n    height: calc(100% / 3)\r\n}\r\n\r\n.tile--four {\r\n    width: calc(100% / 4);\r\n    height: calc(100% / 4);\r\n}\r\n\r\n.tile--five {\r\n    width: calc(100% / 5);\r\n    height: calc(100% / 5);\r\n}\r\n\r\n.tile--six {\r\n    width: calc(100% / 6);\r\n    height: calc(100% / 6);\r\n}\r\n\r\n.tile--seven {\r\n    width: calc(100% / 7);\r\n    height: calc(100% / 7);\r\n}\r\n\r\n.tile--eight {\r\n    width: calc(100% / 8);\r\n    height: calc(100% / 8);\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n  margin: 1vh auto;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 22px;\n}\n\n.statistics-container {\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  text-align: center;\n  font-size: 30px;\n  display: flex;\n  justify-content: space-between;\n}\n\n@media (max-width: 768px) {\n  .controls-container,\n.statistics-container {\n    max-width: 95vw;\n  }\n}\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n@media (max-width: 768px) {\n  .frame {\n    max-width: 640px;\n    max-height: 640px;\n  }\n}\n@media (max-width: 640px) {\n  .frame {\n    max-width: 320px;\n    max-height: 320px;\n  }\n}\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}\n\n.tile--three {\n  width: 33.3333333333%;\n  height: 33.3333333333%;\n}\n\n.tile--four {\n  width: 25%;\n  height: 25%;\n}\n\n.tile--five {\n  width: 20%;\n  height: 20%;\n}\n\n.tile--six {\n  width: 16.6666666667%;\n  height: 16.6666666667%;\n}\n\n.tile--seven {\n  width: 14.2857142857%;\n  height: 14.2857142857%;\n}\n\n.tile--eight {\n  width: 12.5%;\n  height: 12.5%;\n}\n\n@media (max-width: 640px) {\n  .tile--six,\n.tile--seven {\n    font-size: 40px;\n  }\n  .tile--eight {\n    font-size: 30px;\n  }\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;EACA,gBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,eAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,8BAAA;EACA,eAAA;AAHJ;;AAMA;EACI,eAAA;EACA,cAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,8BAAA;AAHJ;;AAMA;EACI;;IAEI,eAAA;EAHN;AACF;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAJJ;;AAOA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBAlDS;AA8Cb;;AAOA;EACI;IACI,gBAAA;IACA,iBAAA;EAJN;AACF;AAMA;EACI;IACI,gBAAA;IACA,iBAAA;EAJN;AACF;AAOA;EACI,sBAAA;EACA,uBAAA;EACA,yBAtEG;EAuEH,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,UAAA;EACA,WAAA;AALJ;;AAQA;EACI,UAAA;EACA,WAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,qBAAA;EACA,sBAAA;AALJ;;AAQA;EACI,YAAA;EACA,aAAA;AALJ;;AAQA;EACI;;IAEI,eAAA;EALN;EAOE;IACI,eAAA;EALN;AACF","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n    margin: 1vh auto;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-size: 22px;\r\n}\r\n\r\n.statistics-container {\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .controls-container,\r\n    .statistics-container {\r\n        max-width: 95vw;\r\n    } \r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .frame {\r\n        max-width: 640px;\r\n        max-height: 640px;\r\n    }\r\n}\r\n@media (max-width: 640px) {\r\n    .frame {\r\n        max-width: 320px;\r\n        max-height: 320px;\r\n    }\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.tile--three {\r\n    width: calc(100% / 3);\r\n    height: calc(100% / 3)\r\n}\r\n\r\n.tile--four {\r\n    width: calc(100% / 4);\r\n    height: calc(100% / 4);\r\n}\r\n\r\n.tile--five {\r\n    width: calc(100% / 5);\r\n    height: calc(100% / 5);\r\n}\r\n\r\n.tile--six {\r\n    width: calc(100% / 6);\r\n    height: calc(100% / 6);\r\n}\r\n\r\n.tile--seven {\r\n    width: calc(100% / 7);\r\n    height: calc(100% / 7);\r\n}\r\n\r\n.tile--eight {\r\n    width: calc(100% / 8);\r\n    height: calc(100% / 8);\r\n}\r\n\r\n@media(max-width: 640px) {\r\n    .tile--six,\r\n    .tile--seven {\r\n        font-size: 40px;\r\n    }\r\n    .tile--eight {\r\n        font-size: 30px;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -666,6 +666,7 @@ let NUMBERS = createNumbers();
 const tiles = [];
 let timerId;
 let moves = 0;
+let width;
 function createHeading() {
   const heading = document.createElement('h1');
   heading.innerText = 'Gem Puzzle';
@@ -677,7 +678,8 @@ function createControls() {
   container.className = 'controls-container';
   document.body.append(container);
   const refreshBtn = document.createElement('button');
-  refreshBtn.innerText = 'Refresh';
+  refreshBtn.className = 'refresh-btn';
+  refreshBtn.innerText = 'Shuffle and Start';
   container.append(refreshBtn);
   refreshBtn.addEventListener('click', () => {
     tiles.length = 0;
@@ -697,7 +699,7 @@ function createControls() {
   options.forEach(element => {
     const option = document.createElement('option');
     option.value = element;
-    option.text = element;
+    option.text = `${element}x${element}`;
     if (element === size) option.selected = true;
     selectSize.appendChild(option);
   });
@@ -717,6 +719,17 @@ function createControls() {
   refreshBtn.after(selectSize);
 }
 window.addEventListener('load', createControls);
+
+/* window.addEventListener('resize', () => {
+    width = parseInt(window.innerWidth);
+    console.log(width)
+    if (width === 330 || width === 640 || width === 768) {
+        const refreshBtn = document.querySelector('.refresh-btn');
+        refreshBtn.click();
+        console.log('I am here')
+    }
+}) */
+
 function createTimer(container) {
   const timer = document.createElement('div');
   timer.className = 'timer';
@@ -746,11 +759,13 @@ function createTimerAndMoveCounter() {
   createTimer(container);
   createMoveCounter(container);
 }
-window.addEventListener('load', createTimerAndMoveCounter);
+window.addEventListener('load', () => {
+  createTimerAndMoveCounter();
+  clearTimeout(timerId);
+});
 function createNumbers() {
   const numbers = new Array();
   for (let i = 0; i < size * size; i++) {
-    //было 16
     numbers.push(i);
   }
   for (let i = numbers.length - 1; i > 0; i--) {
@@ -779,11 +794,10 @@ function createBoard() {
   frame.classList.add('frame');
   wrapper.append(frame);
   for (let i = 0; i < size * size; i++) {
-    //было 16
     const tile = createTile();
     frame.append(tile);
-    const left = i % size; //было 4
-    const top = (i - left) / size; //было 4
+    const left = i % size;
+    const top = (i - left) / size;
     const value = tile.innerHTML;
     const tileSize = window.getComputedStyle(tile).width.slice(0, -2);
 
