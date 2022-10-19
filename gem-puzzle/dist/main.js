@@ -25,7 +25,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n}\n\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  border: 5px solid black;\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-template-rows: 1fr 1fr 1fr 1fr;\n  gap: 5px;\n  padding: 5px;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n}\n\n.tile {\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n}\n\n.tile--empty {\n  background-color: #5BA4C8;\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAHJ;;AAMA;EACI,uBAAA;EACA,aAAA;EACA,sCAAA;EACA,mCAAA;EACA,QAAA;EACA,YAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;AAHJ;;AAMA;EACI,uBAAA;EACA,yBA/BG;EAgCH,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;AAHJ;;AAMA;EACI,yBAxCS;AAqCb","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$empty-tile: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    border: 5px solid black;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\r\n    grid-template-rows: 1fr 1fr 1fr 1fr;\r\n    gap: 5px;\r\n    padding: 5px;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n}\r\n\r\n.tile {\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n}\r\n\r\n.tile--empty {\r\n    background-color: $empty-tile;\r\n}\r\n\r\n\r\n\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n  margin-bottom: 40px;\n  display: flex;\n  justify-content: space-evenly;\n  font-size: 30px;\n}\n\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  width: 25%;\n  height: 25%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAMA;EACI,+BAAA;EACA,eAAA;EACA,kBAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,6BAAA;EACA,eAAA;AAHJ;;AAMA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AAHJ;;AAMA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBAhCS;AA6Bb;;AAMA;EACI,sBAAA;EACA,uBAAA;EACA,yBAvCG;EAwCH,iBAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AAHJ","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n\r\nh1 {\r\n    font-family: 'VT323', monospace;\r\n    font-size: 60px;\r\n    text-align: center;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n    margin-bottom: 40px;\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    font-size: 30px;\r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    width: 25%;\r\n    height: 25%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -661,66 +661,119 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/styles.scss */ "./src/styles/styles.scss");
 
 
-const NUMBERS = createNumbers();
-shuffleArray(NUMBERS);
-let childNodes;
+let NUMBERS = createNumbers();
+const tiles = [];
 function createHeading() {
   const heading = document.createElement('h1');
   heading.innerText = 'Gem Puzzle';
   document.body.append(heading);
 }
+window.addEventListener('load', createHeading);
+function createControls() {
+  const container = document.createElement('div');
+  container.className = 'controls-container';
+  document.body.append(container);
+  const refreshBtn = document.createElement('button');
+  refreshBtn.innerText = 'Refresh';
+  container.append(refreshBtn);
+  refreshBtn.addEventListener('click', () => {
+    tiles.length = 0;
+    const refreshedNumbers = createNumbers();
+    NUMBERS = [...refreshedNumbers];
+    const frame = document.querySelector('.frame');
+    frame.remove();
+    createBoard();
+  });
+}
+window.addEventListener('load', createControls);
+function createNumbers() {
+  const numbers = new Array();
+  for (let i = 0; i < 16; i++) {
+    numbers.push(i);
+  }
+  for (let i = numbers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = numbers[i];
+    numbers[i] = numbers[j];
+    numbers[j] = temp;
+  }
+  return numbers;
+}
+function createTile() {
+  const tile = document.createElement('div');
+  if (NUMBERS[0] === 0) tile.innerText = '';else {
+    tile.innerText = NUMBERS[0];
+    tile.classList.add('tile');
+  }
+  NUMBERS.shift();
+  return tile;
+}
 function createBoard() {
   const wrapper = document.createElement('div');
   wrapper.classList.add('puzzle-wrapper');
   document.body.append(wrapper);
-
-  /* const button = document.createElement('button');
-  button.innerText = 'Move';
-  wrapper.append(button);
-  button.addEventListener('click', move) */
-
   const frame = document.createElement('div');
   frame.classList.add('frame');
   wrapper.append(frame);
   for (let i = 0; i < 16; i++) {
     const tile = createTile();
     frame.append(tile);
+    const left = i % 4;
+    const top = (i - left) / 4;
+    const value = tile.innerHTML;
+    const tileSize = window.getComputedStyle(tile).width.slice(0, -2);
+
+    //создаем массив со всеми ячейками;
+    tiles.push({
+      value: value,
+      left: left,
+      top: top,
+      element: tile
+    });
+    tile.style.left = `${left * tileSize}px`;
+    tile.style.top = `${top * tileSize}px`;
   }
-  childNodes = frame.childNodes;
+  setTimeout(addMove, 300);
 }
-function createTile() {
-  const tile = document.createElement('div');
-  tile.innerText = NUMBERS[0];
-  NUMBERS.shift();
-  tile.classList.add('tile');
-  if (tile.innerText === 'undefined') {
-    tile.classList.add('tile--empty');
-    tile.innerText = '';
-  } else {
-    tile.addEventListener('click', move);
-  }
-  return tile;
-}
-window.addEventListener('load', createHeading);
 window.addEventListener('load', createBoard);
-function createNumbers() {
-  const numbers = new Array();
-  for (let i = 1; i < 16; i++) {
-    numbers.push(i);
-  }
-  numbers.length++;
-  return numbers;
-}
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-}
-function move() {
-  childNodes[3].parentNode.insertBefore(childNodes[3], childNodes[0]);
+function addMove() {
+  const empty = tiles.find(tile => tile.value === '');
+  tiles.forEach(tile => {
+    tile.element.addEventListener('click', () => {
+      const tileSize = window.getComputedStyle(tile.element).width.slice(0, -2);
+
+      //записываем разницу в положении выбранной ячейки и пустой ячейки;
+      const leftDiff = Math.abs(empty.left - tile.left);
+      const topDiff = Math.abs(empty.top - tile.top);
+      if (leftDiff + topDiff > 1) return; //если ячейка не является соседней, то прекращаем выполнение функции;
+
+      //двигаем ячейку, выбранную по индексу
+      tile.element.style.left = `${empty.left * tileSize}px`;
+      tile.element.style.top = `${empty.top * tileSize}px`;
+
+      //запоминаем текущее положение пустой ячейки;
+      const emptyLeft = empty.left;
+      const emptyTop = empty.top;
+      //записываем новое положение пустой ячейки;
+      empty.left = tile.left;
+      empty.top = tile.top;
+      //записываем текущение положение ячейки, которое равно положению ранее пустой ячейки
+      tile.left = emptyLeft;
+      tile.top = emptyTop;
+      const tileIndex = tiles.indexOf(tile);
+      const emptyIndex = tiles.indexOf(empty);
+      tiles[emptyIndex] = tiles[tileIndex];
+      tiles[tileIndex] = empty;
+
+      //проверяем все ли ячейки на своих местах;
+      const tempArr = tiles.slice(0, -1);
+      for (let i = 0; i < tempArr.length; i++) {
+        if (tempArr[i].value != i + 1) return;else if (i === tempArr.length - 1 && tiles[tiles.length - 1].value == '') {
+          console.log('You Won!');
+        }
+      }
+    });
+  });
 }
 })();
 
