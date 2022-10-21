@@ -733,7 +733,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let size = 4;
+
+//после поменять size на 4
+let size = 3;
 let NUMBERS = createNumbers();
 const tiles = [];
 let timerId;
@@ -875,7 +877,21 @@ function createNumbers() {
     numbers[i] = numbers[j];
     numbers[j] = temp;
   }
-  return numbers;
+  //проверяем на решаемость: если решает возвращаем numbers, если нет, то вызываем функцию еще раз
+  if (isSolvable(numbers)) return numbers;else return createNumbers();
+}
+function isSolvable(array) {
+  const zeroIndex = array.indexOf(0);
+  const newArray = [...array.slice(0, zeroIndex), ...array.slice(zeroIndex + 1)];
+  let counter = 0;
+  for (let i = 0; i < newArray.length; i++) {
+    let k = 1;
+    while (k < newArray.length) {
+      if (newArray[i] > newArray[i + k]) counter++;
+      k++;
+    }
+  }
+  return counter % 2 === 0;
 }
 function createTile() {
   const tile = document.createElement('div');
