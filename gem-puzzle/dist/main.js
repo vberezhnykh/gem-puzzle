@@ -733,9 +733,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-//после поменять size на 4
-let size = 3;
+let size = 4;
 let NUMBERS = createNumbers();
 const tiles = [];
 let timerId;
@@ -891,7 +889,11 @@ function isSolvable(array) {
       k++;
     }
   }
-  return counter % 2 === 0;
+  //если размер доски четный, то дополнительно добавляем номер ряда, в котором содержится пустая клетка, начиная с 0
+  if (size % 2 === 0) {
+    const row = Math.ceil((zeroIndex + 1) / size) - 1;
+    return (counter + row) % 2 !== 0;
+  } else return counter % 2 === 0;
 }
 function createTile() {
   const tile = document.createElement('div');
