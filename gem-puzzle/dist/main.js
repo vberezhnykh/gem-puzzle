@@ -25,7 +25,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  /* font-family: 'VT323', monospace; */\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n  margin: 1vh auto;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 22px;\n  font-family: \"VT323\", monospace;\n}\n\n.refresh-btn {\n  background-color: #5BB8C8;\n  border-radius: 5px;\n}\n\n.audio-button {\n  width: 36px;\n  height: 36px;\n  padding: 0;\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-color: #5BB8C8;\n  border-radius: 5px;\n}\n\n.size-button {\n  background-color: #5BB8C8;\n  border-radius: 5px;\n}\n\n.statistics-container {\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  text-align: center;\n  font-size: 30px;\n  display: flex;\n  justify-content: space-between;\n  font-family: \"VT323\", monospace;\n}\n\n@media (max-width: 768px) {\n  .controls-container,\n.statistics-container {\n    max-width: 95vw;\n  }\n}\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n@media (max-width: 768px) {\n  .frame {\n    max-width: 640px;\n    max-height: 640px;\n  }\n}\n@media (max-width: 640px) {\n  .frame {\n    max-width: 320px;\n    max-height: 320px;\n  }\n}\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}\n\n.tile--three {\n  width: 33.3333333333%;\n  height: 33.3333333333%;\n}\n\n.tile--four {\n  width: 25%;\n  height: 25%;\n}\n\n.tile--five {\n  width: 20%;\n  height: 20%;\n}\n\n.tile--six {\n  width: 16.6666666667%;\n  height: 16.6666666667%;\n}\n\n.tile--seven {\n  width: 14.2857142857%;\n  height: 14.2857142857%;\n}\n\n.tile--eight {\n  width: 12.5%;\n  height: 12.5%;\n}\n\n@media (max-width: 640px) {\n  .tile--six,\n.tile--seven {\n    font-size: 40px;\n  }\n  .tile--eight {\n    font-size: 30px;\n  }\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAQA;EACI,qCAAA;EACA,+BALO;EAMP,eAAA;EACA,kBAAA;EACA,gBAAA;AALJ;;AAQA;EACI,WAAA;EACA,eAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,8BAAA;EACA,eAAA;EACA,+BAnBO;AAcX;;AAQA;EACI,yBAzBG;EA0BH,kBAAA;AALJ;;AAQA;EACI,WAAA;EACA,YAAA;EACA,UAAA;EACA,4BAAA;EACA,wBAAA;EACA,yBAnCG;EAoCH,kBAAA;AALJ;;AAQA;EACI,yBAxCG;EAyCH,kBAAA;AALJ;;AAQA;EACI,eAAA;EACA,cAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,8BAAA;EACA,+BAlDO;AA6CX;;AAQA;EACI;;IAEI,eAAA;EALN;AACF;AAQA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AANJ;;AASA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBA3ES;AAqEb;;AASA;EACI;IACI,gBAAA;IACA,iBAAA;EANN;AACF;AAQA;EACI;IACI,gBAAA;IACA,iBAAA;EANN;AACF;AASA;EACI,sBAAA;EACA,uBAAA;EACA,yBA/FG;EAgGH,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AAPJ;;AAUA;EACI,qBAAA;EACA,sBAAA;AAPJ;;AAUA;EACI,UAAA;EACA,WAAA;AAPJ;;AAUA;EACI,UAAA;EACA,WAAA;AAPJ;;AAUA;EACI,qBAAA;EACA,sBAAA;AAPJ;;AAUA;EACI,qBAAA;EACA,sBAAA;AAPJ;;AAUA;EACI,YAAA;EACA,aAAA;AAPJ;;AAUA;EACI;;IAEI,eAAA;EAPN;EASE;IACI,eAAA;EAPN;AACF","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n$mainFont: 'VT323', monospace;\r\n$digitFont: 'Fjalla One', sans-serif;\r\n\r\nh1 {\r\n    /* font-family: 'VT323', monospace; */\r\n    font-family: $mainFont;\r\n    font-size: 60px;\r\n    text-align: center;\r\n    margin: 1vh auto;\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-size: 22px;\r\n    font-family: $mainFont;\r\n}\r\n\r\n.refresh-btn {\r\n    background-color: $tile;\r\n    border-radius: 5px;\r\n}\r\n\r\n.audio-button {\r\n    width: 36px;\r\n    height: 36px;\r\n    padding: 0;\r\n    background-repeat: no-repeat;\r\n    background-size: contain;\r\n    background-color: $tile;\r\n    border-radius: 5px;\r\n}\r\n\r\n.size-button {\r\n    background-color: $tile;\r\n    border-radius: 5px;\r\n}\r\n\r\n.statistics-container {\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-family: $mainFont;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .controls-container,\r\n    .statistics-container {\r\n        max-width: 95vw;\r\n    } \r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .frame {\r\n        max-width: 640px;\r\n        max-height: 640px;\r\n    }\r\n}\r\n@media (max-width: 640px) {\r\n    .frame {\r\n        max-width: 320px;\r\n        max-height: 320px;\r\n    }\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.tile--three {\r\n    width: calc(100% / 3);\r\n    height: calc(100% / 3)\r\n}\r\n\r\n.tile--four {\r\n    width: calc(100% / 4);\r\n    height: calc(100% / 4);\r\n}\r\n\r\n.tile--five {\r\n    width: calc(100% / 5);\r\n    height: calc(100% / 5);\r\n}\r\n\r\n.tile--six {\r\n    width: calc(100% / 6);\r\n    height: calc(100% / 6);\r\n}\r\n\r\n.tile--seven {\r\n    width: calc(100% / 7);\r\n    height: calc(100% / 7);\r\n}\r\n\r\n.tile--eight {\r\n    width: calc(100% / 8);\r\n    height: calc(100% / 8);\r\n}\r\n\r\n@media(max-width: 640px) {\r\n    .tile--six,\r\n    .tile--seven {\r\n        font-size: 40px;\r\n    }\r\n    .tile--eight {\r\n        font-size: 30px;\r\n    }\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n  font-family: \"VT323\", monospace;\n  font-size: 60px;\n  text-align: center;\n  margin: 1vh auto;\n}\n\n.leader-board {\n  position: absolute;\n  width: 100%;\n  max-width: 500px;\n  height: 70vh;\n  border: 1px solid black;\n  z-index: 1;\n  margin: 0 auto;\n  left: 0;\n  right: 0;\n  top: 25vh;\n  background-color: white;\n  padding: 10px;\n  font-family: \"VT323\", monospace;\n  font-size: 30px;\n}\n.leader-board h2 {\n  text-align: center;\n  font-size: 50px;\n}\n.leader-board ol {\n  margin-left: 2%;\n}\n\n.controls-container {\n  width: 100%;\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 22px;\n  font-family: \"VT323\", monospace;\n}\n\n.refresh-btn,\n.pause-button {\n  background-color: #5BB8C8;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.audio-button,\n.leader-board-button,\n.close-button {\n  width: 36px;\n  height: 36px;\n  padding: 0;\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-color: #5BB8C8;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.close-button {\n  position: absolute;\n  right: 10px;\n}\n\n.size-button {\n  background-color: #5BB8C8;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.statistics-container {\n  max-width: 70vh;\n  margin: 0 auto;\n  margin-bottom: 20px;\n  text-align: center;\n  font-size: 30px;\n  display: flex;\n  justify-content: space-between;\n  font-family: \"VT323\", monospace;\n}\n\n@media (max-width: 768px) {\n  .controls-container,\n.statistics-container {\n    max-width: 95vw;\n  }\n}\n.puzzle-wrapper {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n}\n\n.frame {\n  position: relative;\n  border: 5px solid black;\n  height: 1200px;\n  width: 100%;\n  max-height: 70vh;\n  max-width: 70vh;\n  margin: 0 auto;\n  background-color: #5BA4C8;\n}\n\n@media (max-width: 768px) {\n  .frame {\n    max-width: 640px;\n    max-height: 640px;\n  }\n}\n@media (max-width: 640px) {\n  .frame {\n    max-width: 320px;\n    max-height: 320px;\n  }\n}\n.tile {\n  box-sizing: border-box;\n  border: 1px solid black;\n  background-color: #5BB8C8;\n  max-height: 320px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Fjalla One\", sans-serif;\n  font-size: 60px;\n  position: absolute;\n  transition: all 0.3s;\n  cursor: pointer;\n}\n\n.tile--three {\n  width: 33.3333333333%;\n  height: 33.3333333333%;\n}\n\n.tile--four {\n  width: 25%;\n  height: 25%;\n}\n\n.tile--five {\n  width: 20%;\n  height: 20%;\n}\n\n.tile--six {\n  width: 16.6666666667%;\n  height: 16.6666666667%;\n}\n\n.tile--seven {\n  width: 14.2857142857%;\n  height: 14.2857142857%;\n}\n\n.tile--eight {\n  width: 12.5%;\n  height: 12.5%;\n}\n\n@media (max-width: 640px) {\n  .tile--six,\n.tile--seven {\n    font-size: 40px;\n  }\n  .tile--eight {\n    font-size: 30px;\n  }\n}", "",{"version":3,"sources":["webpack://./src/styles/styles.scss"],"names":[],"mappings":"AAQA;EACI,+BAJO;EAKP,eAAA;EACA,kBAAA;EACA,gBAAA;AALJ;;AAQA;EACI,kBAAA;EACA,WAAA;EACA,gBAAA;EACA,YAAA;EACA,uBAAA;EACA,UAAA;EACA,cAAA;EACA,OAAA;EAAS,QAAA;EACT,SAAA;EACA,uBAAA;EACA,aAAA;EACA,+BAtBO;EAuBP,eAAA;AAJJ;AAKI;EACI,kBAAA;EACA,eAAA;AAHR;AAKI;EACI,eAAA;AAHR;;AAOA;EACI,WAAA;EACA,eAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,8BAAA;EACA,eAAA;EACA,+BAzCO;AAqCX;;AAOA;;EAEI,yBAhDG;EAiDH,kBAAA;EACA,eAAA;AAJJ;;AAOA;;;EAGI,WAAA;EACA,YAAA;EACA,UAAA;EACA,4BAAA;EACA,wBAAA;EACA,yBA7DG;EA8DH,kBAAA;EACA,eAAA;AAJJ;;AAOA;EACI,kBAAA;EACA,WAAA;AAJJ;;AAOA;EACI,yBAxEG;EAyEH,kBAAA;EACA,eAAA;AAJJ;;AAOA;EACI,eAAA;EACA,cAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,aAAA;EACA,8BAAA;EACA,+BAnFO;AA+EX;;AAOA;EACI;;IAEI,eAAA;EAJN;AACF;AAOA;EACI,WAAA;EACA,iBAAA;EACA,cAAA;AALJ;;AAQA;EACI,kBAAA;EACA,uBAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,eAAA;EACA,cAAA;EACA,yBA5GS;AAuGb;;AAQA;EACI;IACI,gBAAA;IACA,iBAAA;EALN;AACF;AAOA;EACI;IACI,gBAAA;IACA,iBAAA;EALN;AACF;AAQA;EACI,sBAAA;EACA,uBAAA;EACA,yBAhIG;EAiIH,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,eAAA;AANJ;;AASA;EACI,qBAAA;EACA,sBAAA;AANJ;;AASA;EACI,UAAA;EACA,WAAA;AANJ;;AASA;EACI,UAAA;EACA,WAAA;AANJ;;AASA;EACI,qBAAA;EACA,sBAAA;AANJ;;AASA;EACI,qBAAA;EACA,sBAAA;AANJ;;AASA;EACI,YAAA;EACA,aAAA;AANJ;;AASA;EACI;;IAEI,eAAA;EANN;EAQE;IACI,eAAA;EANN;AACF","sourcesContent":["@import './normalize.css';\r\n@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=VT323&display=swap');\r\n\r\n$tile: #5BB8C8;\r\n$background: #5BA4C8;\r\n$mainFont: 'VT323', monospace;\r\n$digitFont: 'Fjalla One', sans-serif;\r\n\r\nh1 {\r\n    font-family: $mainFont;\r\n    font-size: 60px;\r\n    text-align: center;\r\n    margin: 1vh auto;\r\n}\r\n\r\n.leader-board {\r\n    position: absolute;\r\n    width: 100%;\r\n    max-width: 500px;\r\n    height: 70vh;\r\n    border: 1px solid black;\r\n    z-index: 1;\r\n    margin: 0 auto;\r\n    left: 0; right: 0;\r\n    top: 25vh;\r\n    background-color: white;\r\n    padding: 10px;\r\n    font-family: $mainFont;\r\n    font-size: 30px;\r\n    h2 {\r\n        text-align: center;\r\n        font-size: 50px;\r\n    }\r\n    ol {\r\n        margin-left: 2%;\r\n    }\r\n}\r\n\r\n.controls-container {\r\n    width: 100%;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-size: 22px;\r\n    font-family: $mainFont;\r\n}\r\n\r\n.refresh-btn,\r\n.pause-button {\r\n    background-color: $tile;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n}\r\n\r\n.audio-button,\r\n.leader-board-button,\r\n.close-button {\r\n    width: 36px;\r\n    height: 36px;\r\n    padding: 0;\r\n    background-repeat: no-repeat;\r\n    background-size: contain;\r\n    background-color: $tile;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n}\r\n\r\n.close-button {\r\n    position: absolute;\r\n    right: 10px;\r\n}\r\n\r\n.size-button {\r\n    background-color: $tile;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n}\r\n\r\n.statistics-container {\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-family: $mainFont;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .controls-container,\r\n    .statistics-container {\r\n        max-width: 95vw;\r\n    } \r\n}\r\n\r\n.puzzle-wrapper {\r\n    width: 100%;\r\n    max-width: 1280px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.frame {\r\n    position: relative;\r\n    border: 5px solid black;\r\n    height: 1200px;\r\n    width: 100%;\r\n    max-height: 70vh;\r\n    max-width: 70vh;\r\n    margin: 0 auto;\r\n    background-color: $background;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .frame {\r\n        max-width: 640px;\r\n        max-height: 640px;\r\n    }\r\n}\r\n@media (max-width: 640px) {\r\n    .frame {\r\n        max-width: 320px;\r\n        max-height: 320px;\r\n    }\r\n}\r\n\r\n.tile {\r\n    box-sizing: border-box;\r\n    border: 1px solid black;\r\n    background-color: $tile;\r\n    max-height: 320px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-family: 'Fjalla One', sans-serif;\r\n    font-size: 60px;\r\n    position: absolute;\r\n    transition: all 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.tile--three {\r\n    width: calc(100% / 3);\r\n    height: calc(100% / 3)\r\n}\r\n\r\n.tile--four {\r\n    width: calc(100% / 4);\r\n    height: calc(100% / 4);\r\n}\r\n\r\n.tile--five {\r\n    width: calc(100% / 5);\r\n    height: calc(100% / 5);\r\n}\r\n\r\n.tile--six {\r\n    width: calc(100% / 6);\r\n    height: calc(100% / 6);\r\n}\r\n\r\n.tile--seven {\r\n    width: calc(100% / 7);\r\n    height: calc(100% / 7);\r\n}\r\n\r\n.tile--eight {\r\n    width: calc(100% / 8);\r\n    height: calc(100% / 8);\r\n}\r\n\r\n@media(max-width: 640px) {\r\n    .tile--six,\r\n    .tile--seven {\r\n        font-size: 40px;\r\n    }\r\n    .tile--eight {\r\n        font-size: 30px;\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -591,6 +591,26 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/assets/close.svg":
+/*!******************************!*\
+  !*** ./src/assets/close.svg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/close.svg";
+
+/***/ }),
+
+/***/ "./src/assets/menu.svg":
+/*!*****************************!*\
+  !*** ./src/assets/menu.svg ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "assets/menu.svg";
+
+/***/ }),
+
 /***/ "./src/assets/volume-off.svg":
 /*!***********************************!*\
   !*** ./src/assets/volume-off.svg ***!
@@ -728,6 +748,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_whoosh_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/whoosh.mp3 */ "./src/assets/whoosh.mp3");
 /* harmony import */ var _assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/volume-on.svg */ "./src/assets/volume-on.svg");
 /* harmony import */ var _assets_volume_off_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/volume-off.svg */ "./src/assets/volume-off.svg");
+/* harmony import */ var _assets_menu_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/menu.svg */ "./src/assets/menu.svg");
+/* harmony import */ var _assets_close_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/close.svg */ "./src/assets/close.svg");
+
+
 
 
 
@@ -738,9 +762,10 @@ let NUMBERS = createNumbers();
 const tiles = [];
 let timerId;
 let moves = 0;
-let width;
 let isPlaying = true;
 let isRun = false;
+let results = [];
+if (localStorage.getItem('results') !== null) results = [...JSON.parse(localStorage.getItem('results'))];
 function createHeading() {
   const heading = document.createElement('h1');
   heading.innerText = 'Gem Puzzle';
@@ -757,21 +782,15 @@ function createControls() {
   const refreshBtn = document.createElement('button');
   refreshBtn.className = 'refresh-btn';
   refreshBtn.innerText = 'Shuffle and Start';
-  container.append(refreshBtn);
-  refreshBtn.addEventListener('click', () => {
-    tiles.length = 0;
-    const refreshedNumbers = createNumbers();
-    NUMBERS = [...refreshedNumbers];
-    const frame = document.querySelector('.puzzle-wrapper');
-    frame.remove();
-    clearTimeout(timerId);
-    isRun = false;
-    const statistics = document.querySelector('.statistics-container');
-    statistics.remove();
-    moves = 0;
-    createTimerAndMoveCounter();
-    createBoard();
-  });
+  container.appendChild(refreshBtn);
+  refreshBtn.onclick = shuffleTiles;
+
+  //создаем кнопку паузы и сохранения состояния;
+  const pauseBtn = document.createElement('button');
+  pauseBtn.className = 'pause-button';
+  pauseBtn.innerText = 'Pause and Save';
+  refreshBtn.after(pauseBtn);
+  pauseBtn.onclick = saveState;
 
   //создаем кнопку выключения звука;
   const audioBtn = document.createElement('button');
@@ -786,7 +805,7 @@ function createControls() {
       isPlaying = true;
     }
   });
-  refreshBtn.after(audioBtn);
+  pauseBtn.after(audioBtn);
 
   //создаем меню выбора размера поля
   const selectSize = document.createElement('select');
@@ -802,32 +821,59 @@ function createControls() {
   });
   selectSize.addEventListener('change', () => {
     size = parseInt(selectSize.value);
-    tiles.length = 0;
-    const refreshedNumbers = createNumbers();
-    NUMBERS = [...refreshedNumbers];
-    const frame = document.querySelector('.puzzle-wrapper');
-    frame.remove();
-    clearTimeout(timerId);
-    isRun = false;
-    const statistics = document.querySelector('.statistics-container');
-    statistics.remove();
-    createTimerAndMoveCounter();
-    createBoard();
+    shuffleTiles();
   });
   audioBtn.after(selectSize);
+
+  //создаем таблицу лучших результатов;
+  const leaderboardBtn = document.createElement('button');
+  leaderboardBtn.className = 'leader-board-button';
+  leaderboardBtn.style.backgroundImage = `url(${_assets_menu_svg__WEBPACK_IMPORTED_MODULE_5__})`;
+  leaderboardBtn.addEventListener('click', () => {
+    const leaderBoard = document.createElement('div');
+    leaderBoard.className = 'leader-board';
+    document.body.prepend(leaderBoard);
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-button';
+    closeBtn.style.backgroundImage = `url(${_assets_close_svg__WEBPACK_IMPORTED_MODULE_6__})`;
+    closeBtn.onclick = () => leaderBoard.remove();
+    leaderBoard.appendChild(closeBtn);
+    const heading = document.createElement('h2');
+    leaderBoard.appendChild(heading);
+    heading.innerText = 'TOP RESULTS:';
+    const list = document.createElement('ol');
+    //добавить филтрацию по лучшему времени;
+    for (let i = 0; i < 10; i++) {
+      const item = document.createElement('li');
+      list.appendChild(item);
+      if (results[i] === undefined) item.innerHTML = `---`;else item.innerHTML = `Time: ${results[i].time}; Moves: ${results[i].moves}; Size: ${results[i].size}`;
+    }
+    leaderBoard.appendChild(list);
+  });
+  selectSize.after(leaderboardBtn);
 }
 window.addEventListener('load', createControls);
-
-/* window.addEventListener('resize', () => {
-    width = parseInt(window.innerWidth);
-    console.log(width)
-    if (width === 330 || width === 640 || width === 768) {
-        const refreshBtn = document.querySelector('.refresh-btn');
-        refreshBtn.click();
-        console.log('I am here')
-    }
-}) */
-
+function shuffleTiles() {
+  tiles.length = 0;
+  const refreshedNumbers = createNumbers();
+  NUMBERS = [...refreshedNumbers];
+  const frame = document.querySelector('.puzzle-wrapper');
+  frame.remove();
+  clearTimeout(timerId);
+  isRun = false;
+  const statistics = document.querySelector('.statistics-container');
+  statistics.remove();
+  moves = 0;
+  createTimerAndMoveCounter();
+  createBoard();
+}
+function saveState() {
+  /* clearTimeout(timerId);
+  const time = document.querySelector('.timer').innerHTML;
+  const result = { time, moves, size: `${size}x${size}` };
+  results.push(result);
+  localStorage.setItem('results', JSON.stringify(results)); */
+}
 function createTimer(container) {
   const timer = document.createElement('div');
   timer.className = 'timer';
@@ -982,7 +1028,14 @@ function addMove() {
           clearTimeout(timerId);
           const time = document.querySelector('.timer').innerHTML;
           alert(`Hooray! You solved the puzzle in ${time} and ${moves} moves!`);
-          //save to local storage
+          // сохраняем результат в Local Storage;
+          const result = {
+            time,
+            moves,
+            size: `${size}x${size}`
+          };
+          results.push(result);
+          localStorage.setItem('results', JSON.stringify(results));
         }
       }
     });
