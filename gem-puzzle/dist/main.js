@@ -750,6 +750,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_volume_off_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/volume-off.svg */ "./src/assets/volume-off.svg");
 /* harmony import */ var _assets_menu_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/menu.svg */ "./src/assets/menu.svg");
 /* harmony import */ var _assets_close_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/close.svg */ "./src/assets/close.svg");
+/* eslint-disable no-param-reassign */
 
 
 
@@ -758,90 +759,269 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let size = 4;
+function isSolvable(array) {
+  const zeroIndex = array.indexOf(0);
+  const newArray = [...array.slice(0, zeroIndex), ...array.slice(zeroIndex + 1)];
+  let counter = 0;
+  for (let i = 0; i < newArray.length; i += 1) {
+    let k = 1;
+    while (k < newArray.length) {
+      if (newArray[i] > newArray[i + k]) counter += 1;
+      k += 1;
+    }
+  }
+  /* если размер доски четный, то дополнительно добавляем номер ряда, в котором содержится
+  пустая клетка, начиная с 0 */
+  if (size % 2 === 0) {
+    const row = Math.ceil((zeroIndex + 1) / size) - 1;
+    return (counter + row) % 2 !== 0;
+  }
+  return counter % 2 === 0;
+}
+function createNumbers() {
+  const numbers = [];
+  for (let i = 0; i < size * size; i += 1) {
+    numbers.push(i);
+  }
+  for (let i = numbers.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = numbers[i];
+    numbers[i] = numbers[j];
+    numbers[j] = temp;
+  }
+  // проверяем на решаемость: если решаемо возвращаем numbers, если нет, то вызываем функцию еще раз
+  if (isSolvable(numbers)) return numbers;
+  return createNumbers();
+}
 let NUMBERS;
-localStorage.getItem('position') === null ? NUMBERS = createNumbers() : NUMBERS = [...JSON.parse(localStorage.getItem('position'))];
+if (localStorage.getItem('position') === null) NUMBERS = createNumbers();else NUMBERS = [...JSON.parse(localStorage.getItem('position'))];
 const tiles = [];
 let timerId;
 let time;
-localStorage.getItem('time') !== null ? time = localStorage.getItem('time') : time = '00:00';
+if (localStorage.getItem('time') !== null) time = localStorage.getItem('time');else time = '00:00';
 let moves;
-localStorage.getItem('moves') !== null ? moves = localStorage.getItem('moves') : moves = 0;
+if (localStorage.getItem('moves') !== null) moves = parseInt(localStorage.getItem('moves'), 10);else moves = 0;
 let isPlaying = true;
 let isRun = false;
 let results = [];
 if (localStorage.getItem('results') !== null) results = [...JSON.parse(localStorage.getItem('results'))];
 let activeFilter = 'time';
-/* let width = window.innerWidth;
-
-console.log(width) */
-
 function createHeading() {
   const heading = document.createElement('h1');
   heading.innerText = 'Gem Puzzle';
   document.body.append(heading);
 }
-window.addEventListener('load', createHeading);
-function createControls() {
-  //создаем контейнер с элементами управления;
-  const container = document.createElement('div');
-  container.className = 'controls-container';
-  document.body.append(container);
-
-  //создаем кнопку перемешивания;
-  const refreshBtn = document.createElement('button');
-  refreshBtn.className = 'refresh-btn';
-  refreshBtn.innerText = 'Shuffle and Start';
-  container.appendChild(refreshBtn);
-  refreshBtn.onclick = shuffleTiles;
-
-  //создаем кнопку паузы и сохранения состояния;
-  const pauseBtn = document.createElement('button');
-  pauseBtn.className = 'pause-button';
-  pauseBtn.innerText = 'Pause and Save';
-  refreshBtn.after(pauseBtn);
-  pauseBtn.addEventListener('click', pauseAndSave);
-
-  //создаем кнопку выключения звука;
-  const audioBtn = document.createElement('button');
-  audioBtn.className = 'audio-button';
-  audioBtn.style.backgroundImage = `url(${_assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__})`;
-  audioBtn.addEventListener('click', () => {
-    if (isPlaying) {
-      audioBtn.style.backgroundImage = `url(${_assets_volume_off_svg__WEBPACK_IMPORTED_MODULE_4__})`;
-      isPlaying = false;
-    } else {
-      audioBtn.style.backgroundImage = `url(${_assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__})`;
-      isPlaying = true;
-    }
-  });
-  pauseBtn.after(audioBtn);
-
-  //создаем меню выбора размера поля
-  const selectSize = document.createElement('select');
-  selectSize.className = 'size-button';
-  selectSize.name = 'Choose size';
-  const options = [3, 4, 5, 6, 7, 8];
-  options.forEach(element => {
-    const option = document.createElement('option');
-    option.value = element;
-    option.text = `${element}x${element}`;
-    if (element === size) option.selected = true;
-    selectSize.appendChild(option);
-  });
-  selectSize.addEventListener('change', () => {
-    size = parseInt(selectSize.value);
-    shuffleTiles();
-  });
-  audioBtn.after(selectSize);
-
-  //создаем таблицу лучших результатов;
-  const leaderboardBtn = document.createElement('button');
-  leaderboardBtn.className = 'leader-board-button';
-  leaderboardBtn.style.backgroundImage = `url(${_assets_menu_svg__WEBPACK_IMPORTED_MODULE_5__})`;
-  leaderboardBtn.onclick = createLeaderBoard;
-  selectSize.after(leaderboardBtn);
+function createTimer(container) {
+  const timer = document.createElement('div');
+  timer.className = 'timer';
+  container.append(timer);
+  timer.innerHTML = time;
 }
-window.addEventListener('load', createControls);
+function createMoveCounter(container) {
+  const moveCount = document.createElement('div');
+  moveCount.className = 'move-counter';
+  container.append(moveCount);
+  moveCount.innerHTML = `Moves: ${moves}`;
+}
+function createTimerAndMoveCounter() {
+  const container = document.createElement('div');
+  container.className = 'statistics-container';
+  document.body.append(container);
+  createTimer(container);
+  createMoveCounter(container);
+}
+function createTile() {
+  const tile = document.createElement('div');
+  if (NUMBERS[0] === 0) tile.innerText = '';else {
+    // eslint-disable-next-line prefer-destructuring
+    tile.innerText = NUMBERS[0];
+    tile.classList.add('tile');
+    if (size === 3) tile.classList.add('tile--three');else if (size === 4) tile.classList.add('tile--four');else if (size === 5) tile.classList.add('tile--five');else if (size === 6) tile.classList.add('tile--six');else if (size === 7) tile.classList.add('tile--seven');else tile.classList.add('tile--eight');
+  }
+  NUMBERS.shift();
+  return tile;
+}
+function runTimer() {
+  const timer = document.querySelector('.timer');
+  let minutes = parseInt(time.split(':')[0], 10);
+  let seconds = parseInt(time.split(':')[1], 10);
+  timerId = setInterval(() => {
+    if (isRun) {
+      seconds += 1;
+      if (seconds === 60) {
+        seconds = 0;
+        minutes += 1;
+      }
+      timer.innerHTML = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
+    }
+  }, 1000);
+}
+function saveState() {
+  if (NUMBERS.length !== 0) NUMBERS.length = 0;
+  tiles.forEach(elem => {
+    if (elem.value === '') NUMBERS.push(0);else NUMBERS.push(parseInt(elem.value, 10));
+  });
+  localStorage.setItem('position', JSON.stringify(NUMBERS));
+  time = document.querySelector('.timer').innerHTML;
+  localStorage.setItem('time', time);
+  localStorage.setItem('moves', moves);
+}
+function pauseAndSave() {
+  isRun = false;
+  const button = document.querySelector('.pause-button');
+  // удаляем слушатель события и меняем текст внутри кнопки
+  button.innerHTML = 'Continue';
+  button.removeEventListener('click', pauseAndSave);
+  button.addEventListener('click', () => {
+    button.innerHTML = 'Pause and Save';
+    button.addEventListener('click', pauseAndSave);
+    isRun = true;
+  });
+  saveState();
+}
+window.onbeforeunload = saveState;
+function addMove() {
+  const empty = tiles.find(tile => tile.value === '');
+  tiles.forEach(tile => {
+    tile.element.addEventListener('click', () => {
+      const tileSize = window.getComputedStyle(tile.element).width.slice(0, -2);
+
+      // записываем разницу в положении выбранной ячейки и пустой ячейки;
+      const leftDiff = Math.abs(empty.left - tile.left);
+      const topDiff = Math.abs(empty.top - tile.top);
+      // если ячейка не является соседней, то прекращаем выполнение функции;
+      if (leftDiff + topDiff > 1) return;
+
+      // двигаем ячейку, выбранную по индексу
+      tile.element.style.left = `${empty.left * tileSize}px`;
+      tile.element.style.top = `${empty.top * tileSize}px`;
+      // запоминаем текущее положение пустой ячейки;
+      const emptyLeft = empty.left;
+      const emptyTop = empty.top;
+      // записываем новое положение пустой ячейки;
+      empty.left = tile.left;
+      empty.top = tile.top;
+      // записываем текущение положение ячейки, которое равно положению ранее пустой ячейки
+      tile.left = emptyLeft;
+      tile.top = emptyTop;
+      const tileIndex = tiles.indexOf(tile);
+      const emptyIndex = tiles.indexOf(empty);
+      tiles[emptyIndex] = tiles[tileIndex];
+      tiles[tileIndex] = empty;
+
+      // увеличиваем счетчик ходов;
+      moves += 1;
+      const moveCounter = document.querySelector('.move-counter');
+      moveCounter.innerHTML = `Moves: ${moves}`;
+      // запускаем таймер
+      if (!isRun) {
+        isRun = true;
+        runTimer();
+        const button = document.querySelector('.pause-button');
+        button.innerHTML = 'Pause and Save';
+        button.addEventListener('click', pauseAndSave);
+      }
+
+      // добавляем звук свайпа
+      const sound = new Audio(_assets_whoosh_mp3__WEBPACK_IMPORTED_MODULE_2__["default"]);
+      if (isPlaying) sound.play();
+
+      // проверяем все ли ячейки на своих местах;
+      const tempArr = tiles.slice(0, -1);
+      for (let i = 0; i < tempArr.length; i += 1) {
+        if (parseInt(tempArr[i].value, 10) !== i + 1) return;
+        if (i === tempArr.length - 1 && tiles[tiles.length - 1].value === '') {
+          clearTimeout(timerId);
+          const currentTime = document.querySelector('.timer').innerHTML;
+          // eslint-disable-next-line no-alert
+          alert(`Hooray! You solved the puzzle in ${currentTime} and ${moves} moves!`);
+          // сохраняем результат в Local Storage;
+          const result = {
+            time: currentTime,
+            moves,
+            size: `${size}x${size}`
+          };
+          results.push(result);
+          localStorage.setItem('results', JSON.stringify(results));
+          // обнуляем предыдущее расположение ячеек, времени и ходов, если они сохранены в LS
+          if (localStorage.getItem('time') !== null) delete localStorage.time;
+          if (localStorage.getItem('position') !== null) delete localStorage.position;
+          if (localStorage.getItem('moves') !== null) delete localStorage.moves;
+        }
+      }
+    });
+  });
+}
+function createBoard() {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('puzzle-wrapper');
+  document.body.append(wrapper);
+  const frame = document.createElement('div');
+  frame.classList.add('frame');
+  wrapper.append(frame);
+  for (let i = 0; i < size * size; i += 1) {
+    const tile = createTile();
+    frame.append(tile);
+    const left = i % size;
+    const top = (i - left) / size;
+    const value = tile.innerHTML;
+    const tileSize = window.getComputedStyle(tile).width.slice(0, -2);
+    // создаем массив со всеми ячейками;
+    tiles.push({
+      value,
+      left,
+      top,
+      element: tile
+    });
+    tile.style.left = `${left * tileSize}px`;
+    tile.style.top = `${top * tileSize}px`;
+  }
+  setTimeout(addMove, 300);
+}
+function shuffleTiles() {
+  tiles.length = 0;
+  const refreshedNumbers = createNumbers();
+  NUMBERS = [...refreshedNumbers];
+  const frame = document.querySelector('.puzzle-wrapper');
+  frame.remove();
+  clearTimeout(timerId);
+  isRun = false;
+  time = '00:00';
+  const statistics = document.querySelector('.statistics-container');
+  statistics.remove();
+  moves = 0;
+  createTimerAndMoveCounter();
+  createBoard();
+
+  // удаляем сведения о предыдущей игре, если они сохранены в LS;
+  if (localStorage.getItem('time') !== null) delete localStorage.time;
+  if (localStorage.getItem('position') !== null) delete localStorage.position;
+  if (localStorage.getItem('moves') !== null) delete localStorage.moves;
+}
+function listOfBestResults(filter) {
+  const list = document.createElement('ol');
+  const unsortedResults = [...results];
+  let sortedResults;
+  if (filter === 'moves') sortedResults = unsortedResults.sort((a, b) => a.moves - b.moves);else {
+    sortedResults = unsortedResults.sort((a, b) => {
+      const aSplitTime = a.time.split(':');
+      const bSplitTime = b.time.split(':');
+      const aMinutes = 60 * parseInt(aSplitTime[0], 10);
+      const bMinutes = 60 * parseInt(bSplitTime[0], 10);
+      const aSeconds = parseInt(aSplitTime[1], 10);
+      const bSeconds = parseInt(bSplitTime[1], 10);
+      const aTimeInSec = aMinutes + aSeconds;
+      const bTimeInSec = bMinutes + bSeconds;
+      return aTimeInSec - bTimeInSec;
+    });
+  }
+  for (let i = 0; i < 10; i += 1) {
+    const item = document.createElement('li');
+    list.appendChild(item);
+    if (sortedResults[i] === undefined) item.innerHTML = '---';else item.innerHTML = `Time: ${sortedResults[i].time}; Moves: ${sortedResults[i].moves}; Size: ${sortedResults[i].size}`;
+  }
+  return list;
+}
 function createLeaderBoard() {
   const leaderBoard = document.createElement('div');
   leaderBoard.className = 'leader-board';
@@ -859,7 +1039,7 @@ function createLeaderBoard() {
   leaderBoard.appendChild(filter);
   const timeFilter = document.createElement('span');
   timeFilter.innerHTML = ' TIME   ';
-  activeFilter === 'time' ? timeFilter.className = 'filter--active' : false;
+  if (activeFilter === 'time') timeFilter.className = 'filter--active';
   timeFilter.addEventListener('click', () => {
     activeFilter = 'time';
     leaderBoard.remove();
@@ -868,7 +1048,7 @@ function createLeaderBoard() {
   filter.appendChild(timeFilter);
   const movesFilter = document.createElement('span');
   movesFilter.innerHTML = '   MOVES';
-  activeFilter === 'moves' ? movesFilter.className = 'filter--active' : false;
+  if (activeFilter === 'moves') movesFilter.className = 'filter--active';
   movesFilter.addEventListener('click', () => {
     activeFilter = 'moves';
     leaderBoard.remove();
@@ -879,260 +1059,81 @@ function createLeaderBoard() {
   leaderBoard.appendChild(list);
   return leaderBoard;
 }
-function listOfBestResults(activeFilter) {
-  const list = document.createElement('ol');
-  const unsortedResults = [...results];
-  let sortedResults;
-  if (activeFilter === 'moves') sortedResults = unsortedResults.sort((a, b) => a.moves - b.moves);else sortedResults = unsortedResults.sort((a, b) => {
-    const aSplitTime = a.time.split(':'),
-      bSplitTime = b.time.split(':');
-    const aMinutes = 60 * parseInt(aSplitTime[0]),
-      bMinutes = 60 * parseInt(bSplitTime[0]);
-    const aSeconds = parseInt(aSplitTime[1]),
-      bSeconds = parseInt(bSplitTime[1]);
-    const aTimeInSec = aMinutes + aSeconds,
-      bTimeInSec = bMinutes + bSeconds;
-    return aTimeInSec - bTimeInSec;
-  });
-  for (let i = 0; i < 10; i++) {
-    const item = document.createElement('li');
-    list.appendChild(item);
-    if (sortedResults[i] === undefined) item.innerHTML = `---`;else item.innerHTML = `Time: ${sortedResults[i].time}; Moves: ${sortedResults[i].moves}; Size: ${sortedResults[i].size}`;
-  }
-  return list;
-}
-function shuffleTiles() {
-  tiles.length = 0;
-  const refreshedNumbers = createNumbers();
-  NUMBERS = [...refreshedNumbers];
-  const frame = document.querySelector('.puzzle-wrapper');
-  frame.remove();
-  clearTimeout(timerId);
-  isRun = false;
-  time = '00:00';
-  const statistics = document.querySelector('.statistics-container');
-  statistics.remove();
-  moves = 0;
-  createTimerAndMoveCounter();
-  createBoard();
-
-  //удаляем сведения о предыдущей игре, если они сохранены в LS;
-  if (localStorage.getItem('time') !== null) delete localStorage.time;
-  if (localStorage.getItem('position') !== null) delete localStorage.position;
-  if (localStorage.getItem('moves') !== null) delete localStorage.moves;
-}
-function saveState() {
-  if (NUMBERS.length !== 0) NUMBERS.length = 0;
-  tiles.forEach(elem => {
-    if (elem.value === '') NUMBERS.push(0);else NUMBERS.push(parseInt(elem.value));
-  });
-  localStorage.setItem('position', JSON.stringify(NUMBERS));
-  time = document.querySelector('.timer').innerHTML;
-  localStorage.setItem('time', time);
-  localStorage.setItem('moves', moves);
-}
-function pauseAndSave() {
-  isRun = false;
-  const button = document.querySelector('.pause-button');
-  //удаляем слушатель события и меняем текст внутри кнопки
-  button.innerHTML = 'Continue';
-  button.removeEventListener('click', pauseAndSave);
-  button.addEventListener('click', () => {
-    button.innerHTML = 'Pause and Save';
-    button.addEventListener('click', pauseAndSave);
-    isRun = true;
-  });
-  saveState();
-}
-window.onbeforeunload = saveState;
-function createTimer(container) {
-  const timer = document.createElement('div');
-  timer.className = 'timer';
-  container.append(timer);
-  timer.innerHTML = time;
-}
-function runTimer() {
-  const timer = document.querySelector('.timer');
-  let minutes = time.split(':')[0],
-    seconds = time.split(':')[1];
-  timerId = setInterval(() => {
-    if (isRun) {
-      seconds++;
-      if (seconds === 60) {
-        seconds = 0;
-        minutes++;
-      }
-      timer.innerHTML = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
-    }
-  }, 1000);
-  console.log('я запустился');
-}
-function createMoveCounter(container) {
-  const moveCount = document.createElement('div');
-  moveCount.className = 'move-counter';
-  container.append(moveCount);
-  moveCount.innerHTML = `Moves: ${moves}`;
-}
-function createTimerAndMoveCounter() {
+function createControls() {
+  // создаем контейнер с элементами управления;
   const container = document.createElement('div');
-  container.className = 'statistics-container';
+  container.className = 'controls-container';
   document.body.append(container);
-  createTimer(container);
-  createMoveCounter(container);
+
+  // создаем кнопку перемешивания;
+  const refreshBtn = document.createElement('button');
+  refreshBtn.className = 'refresh-btn';
+  refreshBtn.innerText = 'Shuffle and Start';
+  container.appendChild(refreshBtn);
+  refreshBtn.onclick = shuffleTiles;
+
+  // создаем кнопку паузы и сохранения состояния;
+  const pauseBtn = document.createElement('button');
+  pauseBtn.className = 'pause-button';
+  pauseBtn.innerText = 'Pause and Save';
+  refreshBtn.after(pauseBtn);
+  pauseBtn.addEventListener('click', pauseAndSave);
+
+  // создаем кнопку выключения звука;
+  const audioBtn = document.createElement('button');
+  audioBtn.className = 'audio-button';
+  audioBtn.style.backgroundImage = `url(${_assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__})`;
+  audioBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      audioBtn.style.backgroundImage = `url(${_assets_volume_off_svg__WEBPACK_IMPORTED_MODULE_4__})`;
+      isPlaying = false;
+    } else {
+      audioBtn.style.backgroundImage = `url(${_assets_volume_on_svg__WEBPACK_IMPORTED_MODULE_3__})`;
+      isPlaying = true;
+    }
+  });
+  pauseBtn.after(audioBtn);
+
+  // создаем меню выбора размера поля
+  const selectSize = document.createElement('select');
+  selectSize.className = 'size-button';
+  selectSize.name = 'Choose size';
+  const options = [3, 4, 5, 6, 7, 8];
+  options.forEach(element => {
+    const option = document.createElement('option');
+    option.value = element;
+    option.text = `${element}x${element}`;
+    if (element === size) option.selected = true;
+    selectSize.appendChild(option);
+  });
+  selectSize.addEventListener('change', () => {
+    size = parseInt(selectSize.value, 10);
+    shuffleTiles();
+  });
+  audioBtn.after(selectSize);
+
+  // создаем таблицу лучших результатов;
+  const leaderboardBtn = document.createElement('button');
+  leaderboardBtn.className = 'leader-board-button';
+  leaderboardBtn.style.backgroundImage = `url(${_assets_menu_svg__WEBPACK_IMPORTED_MODULE_5__})`;
+  leaderboardBtn.onclick = createLeaderBoard;
+  selectSize.after(leaderboardBtn);
 }
+window.addEventListener('load', createHeading);
+window.addEventListener('load', createControls);
 window.addEventListener('load', () => {
   createTimerAndMoveCounter();
   clearTimeout(timerId);
 });
-function createNumbers() {
-  const numbers = new Array();
-  for (let i = 0; i < size * size; i++) {
-    numbers.push(i);
-  }
-  for (let i = numbers.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = numbers[i];
-    numbers[i] = numbers[j];
-    numbers[j] = temp;
-  }
-  //проверяем на решаемость: если решаемо возвращаем numbers, если нет, то вызываем функцию еще раз
-  if (isSolvable(numbers)) return numbers;else return createNumbers();
-}
-function isSolvable(array) {
-  const zeroIndex = array.indexOf(0);
-  const newArray = [...array.slice(0, zeroIndex), ...array.slice(zeroIndex + 1)];
-  let counter = 0;
-  for (let i = 0; i < newArray.length; i++) {
-    let k = 1;
-    while (k < newArray.length) {
-      if (newArray[i] > newArray[i + k]) counter++;
-      k++;
-    }
-  }
-  //если размер доски четный, то дополнительно добавляем номер ряда, в котором содержится пустая клетка, начиная с 0
-  if (size % 2 === 0) {
-    const row = Math.ceil((zeroIndex + 1) / size) - 1;
-    return (counter + row) % 2 !== 0;
-  } else return counter % 2 === 0;
-}
-function createTile() {
-  const tile = document.createElement('div');
-  if (NUMBERS[0] === 0) tile.innerText = '';else {
-    tile.innerText = NUMBERS[0];
-    tile.classList.add('tile');
-    size === 3 ? tile.classList.add('tile--three') : size === 4 ? tile.classList.add('tile--four') : size === 5 ? tile.classList.add('tile--five') : size === 6 ? tile.classList.add('tile--six') : size === 7 ? tile.classList.add('tile--seven') : size === 8 ? tile.classList.add('tile--eight') : false;
-  }
-  NUMBERS.shift();
-  return tile;
-}
-function createBoard() {
-  const wrapper = document.createElement('div');
-  wrapper.classList.add('puzzle-wrapper');
-  document.body.append(wrapper);
-  const frame = document.createElement('div');
-  frame.classList.add('frame');
-  wrapper.append(frame);
-  for (let i = 0; i < size * size; i++) {
-    const tile = createTile();
-    frame.append(tile);
-    const left = i % size;
-    const top = (i - left) / size;
-    const value = tile.innerHTML;
-    const tileSize = window.getComputedStyle(tile).width.slice(0, -2);
-
-    //создаем массив со всеми ячейками;
-    tiles.push({
-      value: value,
-      left: left,
-      top: top,
-      element: tile
-    });
-    tile.style.left = `${left * tileSize}px`;
-    tile.style.top = `${top * tileSize}px`;
-  }
-  setTimeout(addMove, 300);
-}
 window.addEventListener('load', createBoard);
 window.onresize = () => {
   saveState();
   tiles.length = size * size;
   const container = document.querySelector('.puzzle-wrapper');
   container.remove();
-  localStorage.getItem('position') === null ? NUMBERS = createNumbers() : NUMBERS = [...JSON.parse(localStorage.getItem('position'))];
+  if (localStorage.getItem('position') === null) NUMBERS = createNumbers();else NUMBERS = [...JSON.parse(localStorage.getItem('position'))];
   createBoard();
 };
-function addMove() {
-  const empty = tiles.find(tile => tile.value === '');
-  tiles.forEach(tile => {
-    tile.element.addEventListener('click', () => {
-      const tileSize = window.getComputedStyle(tile.element).width.slice(0, -2);
-
-      //записываем разницу в положении выбранной ячейки и пустой ячейки;
-      const leftDiff = Math.abs(empty.left - tile.left);
-      const topDiff = Math.abs(empty.top - tile.top);
-      if (leftDiff + topDiff > 1) return; //если ячейка не является соседней, то прекращаем выполнение функции;
-
-      //двигаем ячейку, выбранную по индексу
-      tile.element.style.left = `${empty.left * tileSize}px`;
-      tile.element.style.top = `${empty.top * tileSize}px`;
-
-      //запоминаем текущее положение пустой ячейки;
-      const emptyLeft = empty.left;
-      const emptyTop = empty.top;
-      //записываем новое положение пустой ячейки;
-      empty.left = tile.left;
-      empty.top = tile.top;
-      //записываем текущение положение ячейки, которое равно положению ранее пустой ячейки
-      tile.left = emptyLeft;
-      tile.top = emptyTop;
-      const tileIndex = tiles.indexOf(tile);
-      const emptyIndex = tiles.indexOf(empty);
-      tiles[emptyIndex] = tiles[tileIndex];
-      tiles[tileIndex] = empty;
-
-      //увеличиваем счетчик ходов;
-      moves++;
-      const moveCounter = document.querySelector('.move-counter');
-      moveCounter.innerHTML = `Moves: ${moves}`;
-
-      //запускаем таймер
-      console.log(isRun);
-      if (!isRun) {
-        isRun = true;
-        runTimer();
-        const button = document.querySelector('.pause-button');
-        button.innerHTML = 'Pause and Save';
-        button.addEventListener('click', pauseAndSave);
-      }
-
-      //добавляем звук свайпа
-      const sound = new Audio(_assets_whoosh_mp3__WEBPACK_IMPORTED_MODULE_2__["default"]);
-      if (isPlaying) sound.play();
-
-      //проверяем все ли ячейки на своих местах;
-      const tempArr = tiles.slice(0, -1);
-      for (let i = 0; i < tempArr.length; i++) {
-        if (tempArr[i].value != i + 1) return;else if (i === tempArr.length - 1 && tiles[tiles.length - 1].value == '') {
-          clearTimeout(timerId);
-          const time = document.querySelector('.timer').innerHTML;
-          alert(`Hooray! You solved the puzzle in ${time} and ${moves} moves!`);
-          // сохраняем результат в Local Storage;
-          const result = {
-            time,
-            moves,
-            size: `${size}x${size}`
-          };
-          results.push(result);
-          localStorage.setItem('results', JSON.stringify(results));
-          // обнуляем предыдущее расположение ячеек, времени и ходов, если они сохранены в LS
-          if (localStorage.getItem('time') !== null) delete localStorage.time;
-          if (localStorage.getItem('position') !== null) delete localStorage.position;
-          if (localStorage.getItem('moves') !== null) delete localStorage.moves;
-        }
-      }
-    });
-  });
-}
 })();
 
 /******/ })()

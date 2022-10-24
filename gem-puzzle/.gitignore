@@ -1,5 +1,6 @@
 src
 .browserslistrc
+.eslintrc.js
 webpack.config.js
 package-lock.json
 package.json
