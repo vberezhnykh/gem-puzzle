@@ -934,13 +934,13 @@ function saveState() {
 function pauseAndSave() {
   isRun = false;
   const button = document.querySelector('.pause-button');
+  //удаляем слушатель события и меняем текст внутри кнопки
   button.innerHTML = 'Continue';
   button.removeEventListener('click', pauseAndSave);
   button.addEventListener('click', () => {
     button.innerHTML = 'Pause and Save';
     button.addEventListener('click', pauseAndSave);
     isRun = true;
-    runTimer();
   });
   saveState();
 }
@@ -965,6 +965,7 @@ function runTimer() {
       timer.innerHTML = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
     }
   }, 1000);
+  console.log('я запустился');
 }
 function createMoveCounter(container) {
   const moveCount = document.createElement('div');
@@ -1095,22 +1096,13 @@ function addMove() {
       moveCounter.innerHTML = `Moves: ${moves}`;
 
       //запускаем таймер
+      console.log(isRun);
       if (!isRun) {
-        runTimer();
         isRun = true;
+        runTimer();
         const button = document.querySelector('.pause-button');
         button.innerHTML = 'Pause and Save';
         button.addEventListener('click', pauseAndSave);
-
-        /* const button = document.querySelector('.pause-button');
-        button.innerHTML = 'Continue';
-        button.removeEventListener('click', pauseAndSave);
-        button.addEventListener('click', () => {
-            button.innerHTML = 'Pause and Save';
-            button.addEventListener('click', pauseAndSave);
-            isRun = true;
-            runTimer();
-        }) */
       }
 
       //добавляем звук свайпа
