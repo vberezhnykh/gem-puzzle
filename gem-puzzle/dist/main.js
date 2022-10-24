@@ -759,19 +759,22 @@ __webpack_require__.r(__webpack_exports__);
 
 let size = 4;
 let NUMBERS;
-if (localStorage.getItem('position') === null) NUMBERS = createNumbers();else NUMBERS = [...JSON.parse(localStorage.getItem('position'))];
+localStorage.getItem('position') === null ? NUMBERS = createNumbers() : NUMBERS = [...JSON.parse(localStorage.getItem('position'))];
 const tiles = [];
 let timerId;
-let time = '00:00';
-if (localStorage.getItem('time') !== null) time = localStorage.getItem('time');
-console.log(time);
-let moves = 0;
-if (localStorage.getItem('moves') !== null) moves = localStorage.getItem('moves');
+let time;
+localStorage.getItem('time') !== null ? time = localStorage.getItem('time') : time = '00:00';
+let moves;
+localStorage.getItem('moves') !== null ? moves = localStorage.getItem('moves') : moves = 0;
 let isPlaying = true;
 let isRun = false;
 let results = [];
 if (localStorage.getItem('results') !== null) results = [...JSON.parse(localStorage.getItem('results'))];
 let activeFilter = 'time';
+/* let width = window.innerWidth;
+
+console.log(width) */
+
 function createHeading() {
   const heading = document.createElement('h1');
   heading.innerText = 'Gem Puzzle';
@@ -796,7 +799,7 @@ function createControls() {
   pauseBtn.className = 'pause-button';
   pauseBtn.innerText = 'Pause and Save';
   refreshBtn.after(pauseBtn);
-  pauseBtn.addEventListener('click', saveState);
+  pauseBtn.addEventListener('click', pauseAndSave);
 
   //создаем кнопку выключения звука;
   const audioBtn = document.createElement('button');
@@ -881,14 +884,14 @@ function listOfBestResults(activeFilter) {
   const unsortedResults = [...results];
   let sortedResults;
   if (activeFilter === 'moves') sortedResults = unsortedResults.sort((a, b) => a.moves - b.moves);else sortedResults = unsortedResults.sort((a, b) => {
-    const aSplitTime = a.time.split(':');
-    const bSplitTime = b.time.split(':');
-    const aMinutes = 60 * parseInt(aSplitTime[0]);
-    const bMinutes = 60 * parseInt(bSplitTime[0]);
-    const aSeconds = parseInt(aSplitTime[1]);
-    const bSeconds = parseInt(bSplitTime[1]);
-    const aTimeInSec = aMinutes + aSeconds;
-    const bTimeInSec = bMinutes + bSeconds;
+    const aSplitTime = a.time.split(':'),
+      bSplitTime = b.time.split(':');
+    const aMinutes = 60 * parseInt(aSplitTime[0]),
+      bMinutes = 60 * parseInt(bSplitTime[0]);
+    const aSeconds = parseInt(aSplitTime[1]),
+      bSeconds = parseInt(bSplitTime[1]);
+    const aTimeInSec = aMinutes + aSeconds,
+      bTimeInSec = bMinutes + bSeconds;
     return aTimeInSec - bTimeInSec;
   });
   for (let i = 0; i < 10; i++) {
@@ -906,6 +909,7 @@ function shuffleTiles() {
   frame.remove();
   clearTimeout(timerId);
   isRun = false;
+  time = '00:00';
   const statistics = document.querySelector('.statistics-container');
   statistics.remove();
   moves = 0;
@@ -918,25 +922,29 @@ function shuffleTiles() {
   if (localStorage.getItem('moves') !== null) delete localStorage.moves;
 }
 function saveState() {
-  const button = document.querySelector('.pause-button');
-  button.innerHTML = 'Continue';
-  button.removeEventListener('click', saveState);
-  button.addEventListener('click', () => {
-    button.innerHTML = 'Pause and Save';
-    button.addEventListener('click', saveState);
-    //при попытке второй раз сохранить таймер не останавливается;
-    runTimer();
-  });
   if (NUMBERS.length !== 0) NUMBERS.length = 0;
   tiles.forEach(elem => {
     if (elem.value === '') NUMBERS.push(0);else NUMBERS.push(parseInt(elem.value));
   });
   localStorage.setItem('position', JSON.stringify(NUMBERS));
-  clearTimeout(timerId);
   time = document.querySelector('.timer').innerHTML;
   localStorage.setItem('time', time);
   localStorage.setItem('moves', moves);
 }
+function pauseAndSave() {
+  isRun = false;
+  const button = document.querySelector('.pause-button');
+  button.innerHTML = 'Continue';
+  button.removeEventListener('click', pauseAndSave);
+  button.addEventListener('click', () => {
+    button.innerHTML = 'Pause and Save';
+    button.addEventListener('click', pauseAndSave);
+    isRun = true;
+    runTimer();
+  });
+  saveState();
+}
+window.onbeforeunload = saveState;
 function createTimer(container) {
   const timer = document.createElement('div');
   timer.className = 'timer';
@@ -945,15 +953,17 @@ function createTimer(container) {
 }
 function runTimer() {
   const timer = document.querySelector('.timer');
-  let minutes = time.split(':')[0];
-  let seconds = time.split(':')[1];
+  let minutes = time.split(':')[0],
+    seconds = time.split(':')[1];
   timerId = setInterval(() => {
-    seconds++;
-    if (seconds === 60) {
-      seconds = 0;
-      minutes++;
+    if (isRun) {
+      seconds++;
+      if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+      }
+      timer.innerHTML = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
     }
-    timer.innerHTML = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`;
   }, 1000);
 }
 function createMoveCounter(container) {
@@ -984,7 +994,7 @@ function createNumbers() {
     numbers[i] = numbers[j];
     numbers[j] = temp;
   }
-  //проверяем на решаемость: если решает возвращаем numbers, если нет, то вызываем функцию еще раз
+  //проверяем на решаемость: если решаемо возвращаем numbers, если нет, то вызываем функцию еще раз
   if (isSolvable(numbers)) return numbers;else return createNumbers();
 }
 function isSolvable(array) {
@@ -1042,6 +1052,14 @@ function createBoard() {
   setTimeout(addMove, 300);
 }
 window.addEventListener('load', createBoard);
+window.onresize = () => {
+  saveState();
+  tiles.length = size * size;
+  const container = document.querySelector('.puzzle-wrapper');
+  container.remove();
+  localStorage.getItem('position') === null ? NUMBERS = createNumbers() : NUMBERS = [...JSON.parse(localStorage.getItem('position'))];
+  createBoard();
+};
 function addMove() {
   const empty = tiles.find(tile => tile.value === '');
   tiles.forEach(tile => {
@@ -1075,9 +1093,24 @@ function addMove() {
       moves++;
       const moveCounter = document.querySelector('.move-counter');
       moveCounter.innerHTML = `Moves: ${moves}`;
+
+      //запускаем таймер
       if (!isRun) {
         runTimer();
         isRun = true;
+        const button = document.querySelector('.pause-button');
+        button.innerHTML = 'Pause and Save';
+        button.addEventListener('click', pauseAndSave);
+
+        /* const button = document.querySelector('.pause-button');
+        button.innerHTML = 'Continue';
+        button.removeEventListener('click', pauseAndSave);
+        button.addEventListener('click', () => {
+            button.innerHTML = 'Pause and Save';
+            button.addEventListener('click', pauseAndSave);
+            isRun = true;
+            runTimer();
+        }) */
       }
 
       //добавляем звук свайпа
@@ -1108,32 +1141,6 @@ function addMove() {
     });
   });
 }
-
-/* console.log(`1. Basic scope:
-- layout, design, responsive UI + 5;
-- at the beginning state of the game, the frame is filled with randomly generated and shuffled numbers: +10;
-- on click on a tile next to an empty cell, the tile moves to the empty cell: +10;
-______
-+ 25;
-
-2. Advanced scope:
-- the game can be restarted without reloading the page: +10;
-- game duration and number of moves are displayed: +10;
-- sound accompaniment (on/off) of tiles movement: +10;
-- implemented saving the state of the game and saving the top 10 results using LocalStorage: +0 (10);
-- implemented selection of different sizes for frame: +10;
-______
-+ 40;
-
-Hacker scope: 
--  when the game is finished, the following message is displayed "Hooray! You solved the puzzle in ##:## and N moves!". So that shuffled algorithm should work correctly - user can solve puzzle +10;
-- animation of tiles' movement on frame: +15;
-- tiles can be dragged with use of mouse: + 0 (15);
-______
-+ 25;
-
-Total: 90;
-`) */
 })();
 
 /******/ })()
